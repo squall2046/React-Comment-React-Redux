@@ -35,16 +35,23 @@ class App extends Component {
   //   this.setState({ comments })
   // }
 
+  deleteComment = (index) => {
+    const { comments } = this.state
+    comments.splice(index, 1)
+    this.setState({ comments })
+  }
+
   render() {
     const { comments, addComment, deleteComment } = this.props
 
     return (
       <div>
-        <header className='site-header jumbotron '>
+        <header className='site-header jumbotron'>
           <div className="container">
             <div className="row">
               <div className="col-xs-12">
-                <h1>React Redux</h1>
+                <h1>React Comments</h1>
+                <h4>React-Redux</h4>
               </div>
             </div>
           </div>

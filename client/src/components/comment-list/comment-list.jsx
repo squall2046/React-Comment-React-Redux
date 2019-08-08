@@ -7,12 +7,13 @@ import './commentList.css'
 export default class CommentList extends Component {
 
     static propTypes = {
-        comments: PropTypes.array.isRequired
+        comments: PropTypes.array.isRequired,
+        deleteComment: PropTypes.func.isRequired
     }
 
     render() {
 
-        const { comments } = this.props
+        const { comments, deleteComment } = this.props
 
         return (
             <div className="col-md-8 float-right">
@@ -21,7 +22,7 @@ export default class CommentList extends Component {
 
                 <ul className="list-group">
                     {
-                        comments.map((c, index) => <CommentItem comment={c} key={index} />)
+                        comments.map((c, index) => <CommentItem comment={c} key={index} index={index} deleteComment={deleteComment} />)
                     }
                 </ul>
             </div>

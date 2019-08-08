@@ -57,11 +57,10 @@ export default class CommentAdd extends Component {
                         ></textarea>
                     </div>
                     <div className="form-group">
-                        <div className="col-sm-offset-2 col-sm-10">
+                        <div className="col-sm-offset-2">
                             <button type='button'
                                 className="btn btn-secondary pull-right"
-                                onClick={this.handleSubmit}
-                            >submit</button>
+                                onClick={this.handleSubmit}>submit</button>
                         </div>
                     </div>
                 </form>

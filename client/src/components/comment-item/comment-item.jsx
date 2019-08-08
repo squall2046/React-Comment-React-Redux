@@ -5,7 +5,16 @@ import './commentItem.css'
 export default class CommentItem extends Component {
 
     static propTypes = {
-        comment: PropTypes.object.isRequired
+        comment: PropTypes.object.isRequired,
+        deleteComment: PropTypes.func.isRequired,
+        index: PropTypes.number.isRequired,
+    }
+
+    handleDelete = () => {
+        const { comment, deleteComment, index } = this.props
+        if (window.confirm(`Confirm to delete ${comment.username} comment?`)) {
+            deleteComment(index)
+        }
     }
 
     render() {
@@ -15,7 +24,8 @@ export default class CommentItem extends Component {
         return (
             <li className="list-group-item">
                 <div className="handle">
-                    <a href="javascript:;"> X </a>
+                    {/* <a href="javascript:;" onClick={this.handleDelete}> X </a> */}
+                    <button type='button'  className='btn btn-sm btn-danger' onClick={this.handleDelete}> X </button>
                 </div>
                 <p className="user"><span>{comment.username}</span><span> Said:</span></p>
                 <p className="sentence">{comment.content}</p>
