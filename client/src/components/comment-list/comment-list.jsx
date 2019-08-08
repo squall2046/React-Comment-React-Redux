@@ -10,14 +10,14 @@ export default class CommentList extends Component {
                 <ul className="list-group">
                     <li className="list-group-item">
                         <div className="handle">
-                            <a href="javascript:;"> X </a>
+                            {/* <a href="javascript:;"> X </a> */}
                         </div>
                         <p className="user"><span>xxx</span><span>Said:</span></p>
                         <p className="sentence">React is good!</p>
                     </li>
                     <li className="list-group-item">
                         <div className="handle">
-                            <a href="javascript:;"> X </a>
+                            {/* <a href="javascript:;"> X </a> */}
                         </div>
                         <p className="user"><span>yyy</span><span>Said:</span></p>
                         <p className="sentence">React is hard!</p>
