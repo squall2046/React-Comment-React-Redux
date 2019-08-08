@@ -1,27 +1,28 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
+import CommentItem from '../comment-item/comment-item'
 import './commentList.css'
 
+
 export default class CommentList extends Component {
+
+    static propTypes = {
+        comments: PropTypes.array.isRequired
+    }
+
     render() {
+
+        const { comments } = this.props
+
         return (
             <div className="col-md-8 float-right">
                 <h3 className="reply">Comments:</h3>
                 <h2 style={{ display: 'none' }}>No Comments</h2>
+
                 <ul className="list-group">
-                    <li className="list-group-item">
-                        <div className="handle">
-                            {/* <a href="javascript:;"> X </a> */}
-                        </div>
-                        <p className="user"><span>xxx</span><span>Said:</span></p>
-                        <p className="sentence">React is good!</p>
-                    </li>
-                    <li className="list-group-item">
-                        <div className="handle">
-                            {/* <a href="javascript:;"> X </a> */}
-                        </div>
-                        <p className="user"><span>yyy</span><span>Said:</span></p>
-                        <p className="sentence">React is hard!</p>
-                    </li>
+                    {
+                        comments.map((c, index) => <CommentItem comment={c} key={index} />)
+                    }
                 </ul>
             </div>
         )
